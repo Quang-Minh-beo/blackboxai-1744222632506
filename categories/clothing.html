@@ -1,163 +1,361 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quần Áo - AffiliateHub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quần áo - Cửa hàng trực tuyến</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .price-range-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 4px;
+      background: #ddd;
+      outline: none;
+    }
+    .price-range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      background: #3b82f6;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div class="flex items-center justify-between">
-                    <a href="../index.html" class="text-2xl font-bold text-indigo-600">AffiliateHub</a>
-                    <button class="md:hidden text-gray-500">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="hidden md:flex items-center space-x-6 mt-4 md:mt-0">
-                    <div class="relative w-64">
-                        <input type="text" placeholder="Tìm kiếm sản phẩm..." 
-                               class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <button class="absolute right-3 top-2 text-gray-400">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+  <!-- Navbar (same as index.html) -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600">ShopName</a>
+        <div class="hidden md:flex space-x-6">
+          <a href="clothing.html" class="text-blue-600 font-medium">Quần áo</a>
+          <a href="../categories/tech.html" class="hover:text-blue-600">Đồ công nghệ</a>
+          <a href="../categories/kids.html" class="hover:text-blue-600">Đồ cho bé</a>
+          <a href="../categories/cosmetics.html" class="hover:text-blue-600">Mỹ phẩm</a>
         </div>
-    </header>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="relative w-64">
+          <input type="text" placeholder="Tìm kiếm sản phẩm..." 
+                 class="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button class="absolute right-3 top-2 text-gray-500">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fas fa-user"></i></a>
+          <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+        <button class="md:hidden text-gray-700">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <div class="flex items-center justify-between mb-8">
-            <h1 class="text-3xl font-bold">Quần Áo</h1>
-            <div class="flex space-x-2">
-                <select class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                    <option>Sắp xếp</option>
-                    <option>Giá tăng dần</option>
-                    <option>Giá giảm dần</option>
-                    <option>Mới nhất</option>
-                </select>
-            </div>
+  <!-- Category Header -->
+  <div class="bg-blue-50 py-12">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">Quần áo</h1>
+      <p class="text-gray-600">Hơn 1000 sản phẩm quần áo thời trang</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row">
+    <!-- Filters -->
+    <div class="w-full md:w-64 mb-8 md:mb-0 md:mr-8">
+      <div class="bg-white p-4 rounded-lg shadow-sm md:sticky top-24">
+        <h3 class="font-bold text-lg mb-4">Bộ lọc</h3>
+        
+        <!-- Price Range -->
+        <div class="mb-6">
+          <h4 class="font-semibold mb-3">Khoảng giá</h4>
+          <input type="range" min="0" max="1000000" value="500000" class="price-range-slider mb-2">
+          <div class="flex justify-between text-sm text-gray-600">
+            <span>0đ</span>
+            <span>1.000.000đ</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Product Card 1 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div class="relative">
-                    <img src="../assets/images/placeholder.jpg" alt="Áo thun nam" class="w-full h-48 object-cover">
-                    <div class="absolute top-2 right-2 bg-indigo-600 text-white text-xs px-2 py-1 rounded">
-                        Mới
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-lg mb-1">Áo thun nam cao cấp</h3>
-                    <p class="text-gray-600 text-sm mb-2">Chất liệu cotton thoáng mát</p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-indigo-600">250.000đ</span>
-                        <a href="products/ao-thun-nam.html" class="text-sm bg-indigo-600 text-white py-1 px-3 rounded hover:bg-indigo-700 transition-colors">
-                            Xem chi tiết
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Card 2 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div class="relative">
-                    <img src="../assets/images/placeholder.jpg" alt="Quần jeans nữ" class="w-full h-48 object-cover">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-lg mb-1">Quần jeans nữ ống rộng</h3>
-                    <p class="text-gray-600 text-sm mb-2">Kiểu dáng trẻ trung</p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-indigo-600">350.000đ</span>
-                        <a href="products/quan-jeans-nu.html" class="text-sm bg-indigo-600 text-white py-1 px-3 rounded hover:bg-indigo-700 transition-colors">
-                            Xem chi tiết
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Card 3 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div class="relative">
-                    <img src="../assets/images/placeholder.jpg" alt="Áo khoác nam" class="w-full h-48 object-cover">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-lg mb-1">Áo khoác nam dù</h3>
-                    <p class="text-gray-600 text-sm mb-2">Chống nước, chống gió</p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-indigo-600">450.000đ</span>
-                        <a href="products/ao-khoac-nam.html" class="text-sm bg-indigo-600 text-white py-1 px-3 rounded hover:bg-indigo-700 transition-colors">
-                            Xem chi tiết
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Card 4 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div class="relative">
-                    <img src="../assets/images/placeholder.jpg" alt="Váy liền nữ" class="w-full h-48 object-cover">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-lg mb-1">Váy liền nữ công sở</h3>
-                    <p class="text-gray-600 text-sm mb-2">Thanh lịch, chuyên nghiệp</p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-indigo-600">300.000đ</span>
-                        <a href="products/vay-lien-nu.html" class="text-sm bg-indigo-600 text-white py-1 px-3 rounded hover:bg-indigo-700 transition-colors">
-                            Xem chi tiết
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <!-- Categories -->
+        <div class="mb-6">
+          <h4 class="font-semibold mb-3">Danh mục</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Áo thun</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Áo sơ mi</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Quần jeans</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Quần short</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Áo khoác</a></li>
+          </ul>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4">AffiliateHub</h3>
-                    <p class="text-gray-400">Trang web tiếp thị liên kết uy tín</p>
-                </div>
-                <div class="grid grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Danh mục</h4>
-                        <ul class="space-y-2">
-                            <li><a href="../categories/clothing.html" class="text-gray-400 hover:text-white">Quần áo</a></li>
-                            <li><a href="../categories/tech.html" class="text-gray-400 hover:text-white">Đồ công nghệ</a></li>
-                            <li><a href="../categories/kids.html" class="text-gray-400 hover:text-white">Đồ trẻ em</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Theo dõi</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>© 2023 AffiliateHub. All rights reserved.</p>
-            </div>
+        <!-- Colors -->
+        <div class="mb-6">
+          <h4 class="font-semibold mb-3">Màu sắc</h4>
+          <div class="flex flex-wrap gap-2">
+            <button class="w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow"></button>
+            <button class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white shadow"></button>
+            <button class="w-6 h-6 rounded-full bg-green-500 border-2 border-white shadow"></button>
+            <button class="w-6 h-6 rounded-full bg-yellow-500 border-2 border-white shadow"></button>
+            <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow"></button>
+            <button class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow"></button>
+          </div>
         </div>
-    </footer>
 
-    <script src="../assets/js/main.js"></script>
+        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+          Áp dụng bộ lọc
+        </button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="flex-1">
+      <!-- Sort and View Options -->
+      <div class="bg-white p-4 rounded-lg shadow-sm mb-6 flex flex-col sm:flex-row justify-between items-center">
+        <div class="mb-3 sm:mb-0">
+          <span class="text-gray-600 mr-2">Sắp xếp theo:</span>
+          <select class="border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option>Phổ biến</option>
+            <option>Giá thấp đến cao</option>
+            <option>Giá cao đến thấp</option>
+            <option>Đánh giá cao</option>
+            <option>Mới nhất</option>
+          </select>
+        </div>
+        <div class="flex items-center">
+          <span class="text-gray-600 mr-2">Hiển thị:</span>
+          <button class="p-1 mr-1 text-gray-400 hover:text-blue-600">
+            <i class="fas fa-th-large"></i>
+          </button>
+          <button class="p-1 text-blue-600">
+            <i class="fas fa-list"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Product 1 -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="../../assets/images/placeholder.html" alt="Product" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">-20%</div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold mb-1">Áo thun nam cổ tròn</h3>
+            <div class="flex items-center mb-2">
+              <div class="text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(42)</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-500 font-bold">199.000đ</span>
+              <span class="text-gray-400 text-sm line-through ml-2">250.000đ</span>
+            </div>
+            <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="../../assets/images/placeholder.html" alt="Product" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">Mới</div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold mb-1">Áo sơ mi nam trắng</h3>
+            <div class="flex items-center mb-2">
+              <div class="text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(36)</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-500 font-bold">299.000đ</span>
+            </div>
+            <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="../../assets/images/placeholder.html" alt="Product" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">-15%</div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold mb-1">Quần jeans nam đen</h3>
+            <div class="flex items-center mb-2">
+              <div class="text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(58)</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-500 font-bold">399.000đ</span>
+              <span class="text-gray-400 text-sm line-through ml-2">470.000đ</span>
+            </div>
+            <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="../../assets/images/placeholder.html" alt="Product" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold mb-1">Áo khoác dù nam</h3>
+            <div class="flex items-center mb-2">
+              <div class="text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(27)</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-500 font-bold">499.000đ</span>
+            </div>
+            <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="../../assets/images/placeholder.html" alt="Product" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">Bán chạy</div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold mb-1">Quần short thể thao</h3>
+            <div class="flex items-center mb-2">
+              <div class="text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(89)</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-500 font-bold">159.000đ</span>
+            </div>
+            <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="../../assets/images/placeholder.html" alt="Product" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded">Độc quyền</div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold mb-1">Áo thun cổ tim</h3>
+            <div class="flex items-center mb-2">
+              <div class="text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(45)</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-500 font-bold">179.000đ</span>
+              <span class="text-gray-400 text-sm line-through ml-2">220.000đ</span>
+            </div>
+            <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="mt-8 flex justify-center">
+        <nav class="flex items-center space-x-1">
+          <a href="#" class="px-3 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100">«</a>
+          <a href="#" class="px-3 py-1 rounded border border-blue-500 bg-blue-500 text-white">1</a>
+          <a href="#" class="px-3 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100">2</a>
+          <a href="#" class="px-3 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100">3</a>
+          <a href="#" class="px-3 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100">»</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (same as index.html) -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Về chúng tôi</h3>
+          <p class="text-gray-300">ShopName - Địa chỉ mua sắm trực tuyến uy tín, chất lượng.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Liên hệ</h3>
+          <p class="text-gray-300">Email: contact@shopname.com</p>
+          <p class="text-gray-300">Hotline: 1900 1234</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Chính sách</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-white">Chính sách bảo mật</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Kết nối</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-300 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-gray-300 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-300 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>© 2023 ShopName. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
