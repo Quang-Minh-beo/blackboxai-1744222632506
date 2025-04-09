@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mỹ Phẩm - AffiliateHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div class="flex items-center justify-between">
+                    <a href="../index.html" class="text-2xl font-bold text-indigo-600">AffiliateHub</a>
+                    <button class="md:hidden text-gray-500">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 mt-4 md:mt-0">
+                    <div class="relative w-64">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm..." 
+                               class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button class="absolute right-3 top-2 text-gray-400">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex items-center justify-between mb-8">
+            <h1 class="text-3xl font-bold">Mỹ Phẩm</h1>
+            <div class="flex space-x-2">
+                <select class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <option>Sắp xếp</option>
+                    <option>Giá tăng dần</option>
+                    <option>Giá giảm dần</option>
+                    <option>Mới nhất</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="relative">
+                    <img src="../assets/images/placeholder.jpg" alt="Serum dưỡng da" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 right-2 bg-indigo-600 text-white text-xs px-2 py-1 rounded">
+                        Mới
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Serum Vitamin C</h3>
+                    <p class="text-gray-600 text-sm mb-2">Dưỡng sáng, chống lão hóa</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-indigo-600">450.000đ</span>
+                        <a href="products/serum-vitamin-c.html" class="text-sm bg-indigo-600 text-white py-1 px-3 rounded hover:bg-indigo-700 transition-colors">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="relative">
+                    <img src="../assets/images/placeholder.jpg" alt="Kem chống nắng" class="w-full h-48 object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Kem chống nắng SPF50+</h3>
+                    <p class="text-gray-600 text-sm mb-2">Chống nắng toàn diện</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-indigo-600">320.000đ</span>
+                        <a href="products/kem-chong-nang.html" class="text-sm bg-indigo-600 text-white py-1 px-3 rounded hover:bg-indigo-700 transition-colors">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="relative">
+                    <img src="../assets/images/placeholder.jpg" alt="Son môi" class="w-full h-48 object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Son lì cao cấp</h3>
+                    <p class="text-gray-600 text-sm mb-2">Lâu trôi, 12 màu</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-indigo-600">280.000đ</span>
+                        <a href="products/son-li.html" class="text-sm bg-indigo-600 text-white py-1 px-3 rounded hover:bg-indigo-700 transition-colors">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="relative">
+                    <img src="../assets/images/placeholder.jpg" alt="Tẩy trang" class="w-full h-48 object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Nước tẩy trang dịu nhẹ</h3>
+                    <p class="text-gray-600 text-sm mb-2">Cho da nhạy cảm</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-indigo-600">220.000đ</span>
+                        <a href="products/tay-trang.html" class="text-sm bg-indigo-600 text-white py-1 px-3 rounded hover:bg-indigo-700 transition-colors">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">AffiliateHub</h3>
+                    <p class="text-gray-400">Trang web tiếp thị liên kết uy tín</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Danh mục</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../categories/clothing.html" class="text-gray-400 hover:text-white">Quần áo</a></li>
+                            <li><a href="../categories/tech.html" class="text-gray-400 hover:text-white">Đồ công nghệ</a></li>
+                            <li><a href="../categories/kids.html" class="text-gray-400 hover:text-white">Đồ trẻ em</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Theo dõi</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2023 AffiliateHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
